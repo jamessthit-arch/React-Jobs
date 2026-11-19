@@ -8,7 +8,7 @@ const HomePage = () => {
     <>
     <Hero />
     <HomeCard />
-    <JobListings ishome={true}/>
+    <JobListings isHome = { true } />
     <ViewAllJobs />
     </>
   )
