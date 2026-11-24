@@ -7,11 +7,16 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     port: 3000,
+
+    watch: {
+      ignored: ['**/jobs.json'],
+    },
+
     proxy: {
       '/api':{
         target: 'http://localhost:5000',
         changeOrigin: true,
-         rewrite: (path) => path.replace(/^\/api/,'')
+         rewrite: (path) => path.replace(/^\/api/,''),
       }
     }
   }
